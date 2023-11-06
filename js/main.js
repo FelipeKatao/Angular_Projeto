@@ -75,7 +75,7 @@ app.config(function($routeProvider) {
         controller:"artigo"
       })
     .when("/leitura/:art",{
-      templateUrl : "./templates/artigos.html",
+      templateUrl : "./templates/leitura.html",
         controller:"artigo"
     })
 
