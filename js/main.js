@@ -25,6 +25,10 @@ app.controller('artigos_base', function($scope) {
         </div> `
        }})
     }
+    $scope.CloseFunc = function(){
+     document.getElementsByClassName("mini_screen")[0].remove()
+     document.getElementsByClassName("Black_screen")[0].remove()
+    }
 
     //Chama a função da Promisse
      $scope.PromFunc()

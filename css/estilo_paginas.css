@@ -60,3 +60,24 @@
     margin-left: 80vh;
     margin-top: 8vh;
 }
+
+.Black_screen{
+    background-color: #000000a8;
+    height: 210vh;
+    width: 120%;
+    position: fixed;
+    z-index: 99;
+    margin-top: -90vh;
+    margin-left: -2vh;
+}
+.mini_screen{
+    z-index: 100;
+    background-color: aliceblue;
+    height: 20vh;
+    position: absolute;
+    margin-top: -30vh;
+    margin-left: 60vh;
+    padding: 2vh;
+    border-radius: 2vh;
+    position: fixed;
+}
