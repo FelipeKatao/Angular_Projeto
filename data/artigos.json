@@ -1,17 +1,20 @@
 [
        {
-            "Titulo":"AAA",
-            "Autor":"XXXX",
+            "Titulo":"Como criar um bom codigo",
+            "Autor":"Blender.M",
+            "Premissa":"Aprenda a como criar um bom codigo utilizando boas praticas do mercado",
             "Conteudo":"idfjofjdfjdfjdfndfjsdnfdfdfdkfdfjdmnfndjfndnandjfnndfndfafdfdfdf"
         },
         {
             "Titulo":"AAA",
             "Autor":"XXXX",
+            "Premissa":"BBBB",
             "Conteudo":"idfjofjdfjdfjdfndfjsdnfdfdfdkfdfjdmnfndjfndnandjfnndfndfafdfdfdf"
         },
         {
             "Titulo":"AAA",
             "Autor":"XXXX",
+            "Premissa":"BBBB",
             "Conteudo":"idfjofjdfjdfjdfndfjsdnfdfdfdkfdfjdmnfndjfndnandjfnndfndfafdfdfdf"
         }
     

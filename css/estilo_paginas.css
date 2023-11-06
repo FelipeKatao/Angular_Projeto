@@ -40,7 +40,7 @@
 
 .articles_{
     margin-top:5vh;
-    height: 40vh;
+    height: auto;
     display: flex;
     flex-direction: row;
 }
@@ -51,6 +51,7 @@
     width: 30vh;
     margin-left: 4vh;
     border-radius: 2vh;
+    padding: 2vh;
 }
 .imgplace-xl{
     background-color: white;
@@ -80,4 +81,38 @@
     padding: 2vh;
     border-radius: 2vh;
     position: fixed;
+}
+.premissa{
+    font-size: 3vh;
+}
+.Artigo_sq button{
+    margin-top: 4vh;
+}
+.ArtigosList{
+    background-color: #545454;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    border-radius: 2vh;
+    padding: 2vh;
+}
+.artigos_cards{
+    background-color: black;
+    margin-top: 3vh;
+    padding: 2vh;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+.placeHold{
+    height: 9vh;
+    width: 9vh;
+    background-color: white;
+}
+.sub_art{
+    margin-top: -2vh;
+    margin-left: 6vh;
 }

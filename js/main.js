@@ -7,6 +7,28 @@ app.controller('home', function($scope) {
 });
 
 
+
+app.controller('artigo',function($scope){
+  $scope.PromFunc = async function(){
+    const Res = await fetch('../data/artigos.json')
+    .then(response => response.json())
+    .then(json => {
+      $scope.Artigos = json
+     for (let index = 0; index < $scope.Artigos.length; index++) {
+      document.getElementById("art1").innerHTML+=`
+      <div class='artigos_cards'>
+        <div class='placeHold'></div>
+        <div class='sub_art'>
+        <h1>`+$scope.Artigos[index]["Titulo"]+`</h1>
+        <h3> Autor: `+$scope.Artigos[index]["Autor"]+`</h3>
+        <button>Ver artigo</button>
+        </div>
+      </div> `
+     }})
+  }
+  $scope.PromFunc()
+})
+
 //Criação de suas controllers
 app.controller('artigos_base', function($scope) {
 
@@ -21,7 +43,9 @@ app.controller('artigos_base', function($scope) {
         document.getElementById("art1").innerHTML+=`
         <div class='Artigo_sq'>
           <h1>`+$scope.Artigos[index]["Titulo"]+`</h1>
-          <h3>`+$scope.Artigos[index]["Autor"]+`</h3>
+          <h3> Autor: `+$scope.Artigos[index]["Autor"]+`</h3>
+          <div class ='premissa' >`+$scope.Artigos[index]["Premissa"]+`</div>
+          <button>Ver artigo</button>
         </div> `
        }})
     }
@@ -34,6 +58,8 @@ app.controller('artigos_base', function($scope) {
 
     //Chama a função da Promisse
      $scope.PromFunc()
+     $scope.CloseFunc()
+     //window.location.href ="http://127.0.0.1:5500/index.html#!/artigos"
 
 });
 
@@ -46,7 +72,11 @@ app.config(function($routeProvider) {
       })
     .when("/artigos", {
         templateUrl : "./templates/artigos.html",
-        controller:"artigos_base"
+        controller:"artigo"
       })
+    .when("/leitura/:art",{
+      templateUrl : "./templates/artigos.html",
+        controller:"artigo"
+    })
 
   });
