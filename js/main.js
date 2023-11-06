@@ -25,6 +25,8 @@ app.controller('artigos_base', function($scope) {
         </div> `
        }})
     }
+
+    //Remover o Anuncio inicial no Blog
     $scope.CloseFunc = function(){
      document.getElementsByClassName("mini_screen")[0].remove()
      document.getElementsByClassName("Black_screen")[0].remove()
