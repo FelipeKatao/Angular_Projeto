@@ -8,25 +8,18 @@ app.controller('home', function($scope) {
 
 
 
-app.controller('artigo',function($scope){
-  $scope.PromFunc = async function(){
-    const Res = await fetch('../data/artigos.json')
-    .then(response => response.json())
-    .then(json => {
-      $scope.Artigos = json
-     for (let index = 0; index < $scope.Artigos.length; index++) {
-      document.getElementById("art1").innerHTML+=`
-      <div class='artigos_cards'>
-        <div class='placeHold'></div>
-        <div class='sub_art'>
-        <h1>`+$scope.Artigos[index]["Titulo"]+`</h1>
-        <h3> Autor: `+$scope.Artigos[index]["Autor"]+`</h3>
-        <button>Ver artigo</button>
-        </div>
-      </div> `
-     }})
+app.controller('artigo',function($scope,$http){
+  $scope.teste = function(Local){
+    alert(Local)
   }
-  $scope.PromFunc()
+  $scope.Lista_Add = ['ola']
+  var promise = $http.get("../data/artigos.json")
+  .then(function(response){
+  response.data.forEach(element => {
+    $scope.Lista_Add.push(element)
+  });
+ })
+
 })
 
 //Criação de suas controllers
