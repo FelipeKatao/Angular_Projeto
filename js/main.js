@@ -6,10 +6,14 @@ app.controller('home', function ($scope) {
   $scope.nome = "artigos"
 });
 
+
 app.controller('leitura',function($scope,$http,$route){
+  //Variaveis importantes 
   $scope.ArtigoAtual = $route.current.params.art
   $scope.ArtigoCarregado =  ""
   $scope.Sugeridos = []
+
+  //Lendo o arquivo para carregar o Artigo
   var Artigo_Carregdo = $http.get("../data/artigos.json")
   .then(function(response){   
     response.data.forEach(element =>{
@@ -19,23 +23,21 @@ app.controller('leitura',function($scope,$http,$route){
     })
   })
 
-  let Indice =0 
+
+  //Lendo o Arquivo para carregar Artigos Sugeridos
   var Artigo_Carregdo = $http.get("../data/artigos.json")
   .then(function(response){   
     response.data.forEach(element =>{
+      //Identificar quais artigos tem assuntos semelhantes e fazer o seu retorno 
       if($scope.ArtigoCarregado.Assunto == element.Assunto){
         $scope.Sugeridos.push(element)
       }
     })
   })
-
-
-
 })
 
 
 app.controller('artigo', function ($scope, $http) {
-
   //Funcao de clique
   $scope.teste = function (TituloArtigo) {
     alert(TituloArtigo)
