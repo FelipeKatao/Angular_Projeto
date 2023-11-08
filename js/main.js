@@ -9,14 +9,28 @@ app.controller('home', function ($scope) {
 app.controller('leitura',function($scope,$http,$route){
   $scope.ArtigoAtual = $route.current.params.art
   $scope.ArtigoCarregado =  ""
+  $scope.Sugeridos = []
   var Artigo_Carregdo = $http.get("../data/artigos.json")
-  .then(function(response){
+  .then(function(response){   
     response.data.forEach(element =>{
       if(element.id == $scope.ArtigoAtual){
         $scope.ArtigoCarregado = element
       }
     })
   })
+
+  let Indice =0 
+  var Artigo_Carregdo = $http.get("../data/artigos.json")
+  .then(function(response){   
+    response.data.forEach(element =>{
+      if($scope.ArtigoCarregado.Assunto == element.Assunto){
+        $scope.Sugeridos.push(element)
+      }
+    })
+  })
+
+
+
 })
 
 

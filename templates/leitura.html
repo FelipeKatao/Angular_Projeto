@@ -6,3 +6,11 @@
         {{ArtigoCarregado.Conteudo}}
     </div>
 </div>
+<h1>Artigos Recomendados</h1>
+<div id="art1" class="articles_">
+    <div class="Artigo_sq" ng-repeat="x in Sugeridos">
+        <h2>{{x.Titulo}}</h2>
+        <h2>{{x.Autor}}</h2>
+        <a href="http://127.0.0.1:5500/index.html#!/leitura/{{x.id}}">Acessar Artigo</a>
+    </div>
+</div>
