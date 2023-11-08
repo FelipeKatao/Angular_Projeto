@@ -6,6 +6,18 @@ app.controller('home', function ($scope) {
   $scope.nome = "artigos"
 });
 
+app.controller('leitura',function($scope,$http,$route){
+  $scope.ArtigoAtual = $route.current.params.art
+  $scope.ArtigoCarregado =  ""
+  var Artigo_Carregdo = $http.get("../data/artigos.json")
+  .then(function(response){
+    response.data.forEach(element =>{
+      if(element.id == $scope.ArtigoAtual){
+        $scope.ArtigoCarregado = element
+      }
+    })
+  })
+})
 
 
 app.controller('artigo', function ($scope, $http) {
@@ -30,38 +42,21 @@ app.controller('artigo', function ($scope, $http) {
 })
 
 //Criação de suas controllers
-app.controller('artigos_base', function ($scope) {
+app.controller('artigos_base', function ($scope,$http) {
+  $scope.ListaArtigos = []
 
-  //Promisse para verificar os artigos inseridos na pagina
-
-  $scope.PromFunc = async function () {
-    const Res = await fetch('../data/artigos.json')
-      .then(response => response.json())
-      .then(json => {
-        $scope.Artigos = json
-        for (let index = 0; index < $scope.Artigos.length; index++) {
-          document.getElementById("art1").innerHTML += `
-        <div class='Artigo_sq'>
-          <h1>`+ $scope.Artigos[index]["Titulo"] + `</h1>
-          <h3> Autor: `+ $scope.Artigos[index]["Autor"] + `</h3>
-          <div class ='premissa' >`+ $scope.Artigos[index]["Premissa"] + `</div>
-          <button>Ver artigo</button>
-        </div> `
-        }
-      })
-  }
+  var Artigo_Carregdo = $http.get("../data/artigos.json")
+  .then(function(response){
+    response.data.forEach(element =>{
+      $scope.ListaArtigos.push(element)
+    })
+  })
 
   //Remover o Anuncio inicial no Blog
   $scope.CloseFunc = function () {
     document.getElementsByClassName("mini_screen")[0].remove()
     document.getElementsByClassName("Black_screen")[0].remove()
   }
-
-  //Chama a função da Promisse
-  $scope.PromFunc()
-  $scope.CloseFunc()
-  //window.location.href ="http://127.0.0.1:5500/index.html#!/artigos"
-
 });
 
 //Configuração de criação de Rotas
@@ -77,7 +72,7 @@ app.config(function ($routeProvider) {
     })
     .when("/leitura/:art", {
       templateUrl: "./templates/leitura.html",
-      controller: "artigo"
+      controller: "leitura"
     })
 
 });

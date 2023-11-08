@@ -15,4 +15,11 @@
     <h3>Insira o seu email para receber novas noticias</h3>
 </div>
 
-<div id="art1" class="articles_"></div>
+<div id="art1" class="articles_">
+    <div ng-repeat="x in ListaArtigos" class="Artigo_sq">
+        <h1>{{x.Titulo}}</h1>
+        <h2>{{x.Autor}}</h2>
+        <article>{{x.Premissa}}</article>
+        <a href="//127.0.0.1:5500/index.html#!/artigos">Acessar Artigo</a>
+    </div>
+</div>
