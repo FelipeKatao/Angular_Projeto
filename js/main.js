@@ -69,11 +69,7 @@ app.controller('artigos_base', function ($scope,$http) {
     })
   })
 
-  //Remover o Anuncio inicial no Blog
-  if(Carregado == true){
-    document.getElementsByClassName("mini_screen")[0].remove()
-    document.getElementsByClassName("Black_screen")[0].remove()
-  }
+
   $scope.CloseFunc = function () {
     document.getElementsByClassName("mini_screen")[0].remove()
     document.getElementsByClassName("Black_screen")[0].remove()
