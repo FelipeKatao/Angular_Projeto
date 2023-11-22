@@ -1,5 +1,6 @@
 
 var app = angular.module('blog', ['ngRoute'])
+var Carregado = false
 
 //Criação de suas controllers
 app.controller('home', function ($scope) {
@@ -69,10 +70,22 @@ app.controller('artigos_base', function ($scope,$http) {
   })
 
   //Remover o Anuncio inicial no Blog
-  $scope.CloseFunc = function () {
+  if(Carregado == true){
     document.getElementsByClassName("mini_screen")[0].remove()
     document.getElementsByClassName("Black_screen")[0].remove()
   }
+  $scope.CloseFunc = function () {
+    document.getElementsByClassName("mini_screen")[0].remove()
+    document.getElementsByClassName("Black_screen")[0].remove()
+    Carregado = true
+  }
+  document.addEventListener("keydown",(e)=>{
+    if(e.key == 'Escape'){
+      document.getElementsByClassName("mini_screen")[0].remove()
+      document.getElementsByClassName("Black_screen")[0].remove()
+      Carregado = true
+    }
+  })
 });
 
 //Configuração de criação de Rotas

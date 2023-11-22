@@ -3,8 +3,15 @@
     font-family:monospace;
 }
 a{
-    color: rgb(168, 168, 168);
+    color: #a8a8a8;
+    margin-top: 2vh;
+    font-size: 2vh;
     text-decoration: none;
+}
+
+body{
+    background-image: url("/img//wp3442605.jpg");
+    background-size: cover;
 }
 #menu_principal{
     background-color: #545454;
@@ -13,6 +20,7 @@ a{
     margin-top: -1vh;
     margin-left: -2vh;
     width: 110%;
+    z-index: 100;
     position: fixed;
 }
 
@@ -23,7 +31,7 @@ a{
     font-size: 2vh;
 }
 .banner-xl{
-    background-color: #343434;
+    background-color: #343434d5;
     color: white;
     height: 60vh;
     width: 100%;
@@ -49,7 +57,7 @@ a{
     flex-direction: row;
 }
 .Artigo_sq{
-    background-color: #545454;
+    background-color: #545454ce;
     color: white;
     height: 40vh;
     width: 30vh;
@@ -58,12 +66,13 @@ a{
     padding: 2vh;
 }
 .imgplace-xl{
-    background-color: white;
-    height: 50vh;
-    width:90vh;
+    background-image: url("/img/prog.jfif");
+    background-size: cover;
+    height: 58vh;
+    width:93vh;
     position: absolute;
     margin-left: 80vh;
-    margin-top: 8vh;
+    margin-top: 2vh;
 }
 
 .Black_screen{
@@ -93,7 +102,7 @@ a{
     margin-top: 4vh;
 }
 .ArtigosList{
-    background-color: #545454;
+    background-color: #5454549e;
     display: flex;
     flex-direction: column;
     margin-top: 10vh;
@@ -137,4 +146,14 @@ a{
     width: 100%;
     margin-left: 4vh;
     border-bottom: 1vh black solid;
+}
+.articles_{
+    background-color: #3a3a3aa1;
+}
+.art_sub{
+    background-color: #3a3a3aa1;
+    color: #e2e2e2;
+    position: absolute;
+    margin-top: 1vh;
+    width: 100%;
 }
