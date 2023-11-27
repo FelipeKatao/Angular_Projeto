@@ -2,6 +2,19 @@
 var app = angular.module('blog', ['ngRoute'])
 var Carregado = false
 
+
+app.directive("popevent",function(){
+  return {
+    template:`
+    <div class="pop-over">
+        <h1>Exemplo de Pop over</h1>
+        <p>Exemplo de pop over com um  texto integrado</p>
+    </div>
+    `
+  }
+})
+
+
 //Criação de suas controllers
 app.controller('home', function ($scope) {
   $scope.nome = "artigos"
