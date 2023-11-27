@@ -157,3 +157,16 @@ body{
     margin-top: 1vh;
     width: 100%;
 }
+
+.pop-over{
+    background-color: #545454;
+    color: white;
+    text-align: left;
+    float: left;
+    width: 40vh;
+    padding: 2vh;
+    position: fixed;
+    margin-top: -60vh;
+    margin-left: 78%;
+    z-index: 99;
+}

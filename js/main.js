@@ -9,6 +9,7 @@ app.directive("popevent",function(){
     <div class="pop-over">
         <h1>Exemplo de Pop over</h1>
         <p>Exemplo de pop over com um  texto integrado</p>
+        <button id='FecharPopOver'>Fechar</button>
     </div>
     `
   }
@@ -56,6 +57,9 @@ app.controller('artigo', function ($scope, $http) {
   $scope.teste = function (TituloArtigo) {
     alert(TituloArtigo)
   }
+  document.getElementById('FecharPopOver').addEventListener("click",()=>[
+    document.getElementsByClassName("pop-over")[0].remove()
+  ])
 
   // Lista para armazenar o Json
   $scope.Lista_Add = []
