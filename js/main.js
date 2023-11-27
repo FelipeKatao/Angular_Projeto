@@ -7,8 +7,8 @@ app.directive("popevent",function(){
   return {
     template:`
     <div class="pop-over">
-        <h1>Exemplo de Pop over</h1>
-        <p>Exemplo de pop over com um  texto integrado</p>
+        <h1>{{PopOverAlert[0]}}</h1>
+        <p>{{PopOverAlert[1]}}</p>
         <button id='FecharPopOver'>Fechar</button>
     </div>
     `
@@ -53,13 +53,18 @@ app.controller('leitura',function($scope,$http,$route){
 
 
 app.controller('artigo', function ($scope, $http) {
+  $scope.PopOverAlert =["Artigos arquivados","Posts com mais de 1 ano sem atividade foram arquivados!"]
   //Funcao de clique
   $scope.teste = function (TituloArtigo) {
     alert(TituloArtigo)
   }
-  document.getElementById('FecharPopOver').addEventListener("click",()=>[
-    document.getElementsByClassName("pop-over")[0].remove()
-  ])
+  document.getElementById('FecharPopOver').addEventListener("click",()=>{
+    document.getElementsByClassName("pop-over")[0].classList+=" move_pop"
+    let a = setInterval(() => {
+      document.getElementsByClassName("pop-over")[0].remove()
+      clearInterval(a)
+    }, 2000);
+})
 
   // Lista para armazenar o Json
   $scope.Lista_Add = []

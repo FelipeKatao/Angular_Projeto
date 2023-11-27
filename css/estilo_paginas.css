@@ -169,4 +169,36 @@ body{
     margin-top: -60vh;
     margin-left: 78%;
     z-index: 99;
+    animation-name: pop_move;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transition: 1s all;
+}
+.move_pop{
+    background-color: #545454;
+    color: white;
+    text-align: left;
+    float: left;
+    width: 40vh;
+    padding: 2vh;
+    position: fixed;
+    margin-top: -60vh;
+    margin-left: 78%;
+    z-index: 99;
+    animation-name: pop_move_exit;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    transition: 1s all;
+}
+@keyframes pop_move {
+    0%{margin-left: 100%;}
+    100%{margin-left: 78%;}
+}
+
+
+@keyframes pop_move_exit {
+    0%{margin-left: 78%;}
+    100%{margin-left: 100%;}
 }
