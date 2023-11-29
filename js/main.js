@@ -88,6 +88,7 @@ app.controller('artigos_base', function ($scope,$http) {
   .then(function(response){
     response.data.forEach(element =>{
       $scope.ListaArtigos.push(element)
+      console.log(element)
     })
   })
 
