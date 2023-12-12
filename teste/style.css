@@ -1,0 +1,20 @@
+.Elementos{
+    background-color: #9a0101;
+    height: 10vh;
+    width: 100%;
+    padding: 2vh;
+    display: grid;
+    grid-template-rows: auto;
+    grid: auto-flow / 10vh 10vh 10vh;
+    gap:2vh;
+}
+.sqr{
+    background-color: #ff0000;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 20vh;
+}
+.sqr :nth-last-child(){
+    margin-left: 10vh;
+    background-color: green;
+}

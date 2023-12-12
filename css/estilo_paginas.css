@@ -202,3 +202,18 @@ body{
     0%{margin-left: 78%;}
     100%{margin-left: 100%;}
 }
+
+.TestBase{
+    background-color: red;
+    color:black;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 90vh;
+}
+
+.TestBase:first-child:hover{
+    background-color: green;
+}
+.TestBase:nth-child(3){
+    background-color: #545454;
+}
